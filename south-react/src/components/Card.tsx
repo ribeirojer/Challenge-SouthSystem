@@ -1,4 +1,4 @@
-import React from "react";
+import placeholder from "../assets/150.png";
 import { Item } from "../interfaces/ISearch";
 
 type Props = {
@@ -6,34 +6,25 @@ type Props = {
 };
 
 const Card = ({ data }: Props) => {
+  let imagem = data?.volumeInfo?.imageLinks?.thumbnail;
+  if (imagem == "" || imagem == undefined) {
+    imagem = placeholder;
+  }
+
   return (
-    <div className="w-full px-4 md:w-1/2 xl:w-1/3">
-      <div className="mb-10 overflow-hidden rounded-lg bg-white">
+    <div className="w-full p-4 md:w-1/3 lg:w-1/5">
+      <a className="relative block h-48 overflow-hidden rounded">
         <img
-          src="https://cdn.tailgrids.com/2.0/image/application/images/cards/card-01/image-01.jpg"
-          alt="image"
-          className="w-full"
+          alt="ecommerce"
+          className="block h-full w-full object-cover object-center cursor-pointer"
+          src={`${imagem}`}
         />
-        <div className="p-8 text-center sm:p-9 md:p-7 xl:p-9">
-          <h3>
-            <a
-              href="javascript:void(0)"
-              className="text-dark hover:text-primary mb-4 block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
-            >
-              {data.id}
-            </a>
-          </h3>
-          <p className="text-body-color mb-7 text-base leading-relaxed">
-            Lorem ipsum dolor sit amet pretium consectetur adipiscing elit.
-            Lorem consectetur adipiscing elit.
-          </p>
-          <a
-            href="javascript:void(0)"
-            className="text-body-color hover:border-primary hover:bg-primary inline-block rounded-full border border-[#E5E7EB] py-2 px-7 text-base font-medium transition hover:text-white"
-          >
-            View Details
-          </a>
-        </div>
+      </a>
+      <div className="mt-4">
+        <h2 className="title-font text-lg font-medium text-gray-900">
+          {data.volumeInfo.title}
+        </h2>
+        <p className="mt-1">{data.volumeInfo.authors}</p>
       </div>
     </div>
   );

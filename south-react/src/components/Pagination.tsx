@@ -1,10 +1,12 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  totalItems: number;
+};
 
 const Pagination = (props: Props) => {
   return (
-    <div className="text-center">
+    <div className="text-center pb-16">
       <div className="inline-flex rounded-xl border border-[#e4e4e4] bg-white p-4">
         <ul className="-mx-[6px] flex items-center">
           <li className="px-[6px]">
