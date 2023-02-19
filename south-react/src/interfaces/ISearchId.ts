@@ -1,4 +1,4 @@
-export interface Unique {
+export interface IUnique {
   kind: string;
   id: string;
   etag: string;

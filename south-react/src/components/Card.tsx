@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import placeholder from "../assets/150.png";
 import { Item } from "../interfaces/ISearch";
 
@@ -13,13 +14,13 @@ const Card = ({ data }: Props) => {
 
   return (
     <div className="w-full p-4 md:w-1/3 lg:w-1/5">
-      <a className="relative block h-48 overflow-hidden rounded">
+      <Link to={`book/${data.id}`} className="relative block h-48 overflow-hidden rounded">
         <img
           alt="ecommerce"
           className="block h-full w-full object-cover object-center cursor-pointer"
           src={`${imagem}`}
         />
-      </a>
+      </Link>
       <div className="mt-4">
         <h2 className="title-font text-lg font-medium text-gray-900">
           {data.volumeInfo.title}
