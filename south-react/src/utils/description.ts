@@ -1,14 +1,11 @@
-export const ff = "";
-/*import sanitizeHtml from "sanitize-html";
+export function formatData(data: string) {
+  // Cria um objeto Date a partir da string de data recebida
+  const dataObj = new Date(data);
 
-export function BookDescription(description: string) {
-  // Remove todas as tags e atributos perigosos do HTML
-  const sanitizedDescription = sanitizeHtml(description, {
-    allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-  });
-  console.log(sanitizedDescription)
-  return "";
-  //<div dangerouslySetInnerHTML={{ __html: sanitizedDescription }}></div>;
+  // Formata a data em uma string no formato DD/MM/YYYY
+  const dia = dataObj.getDate().toString().padStart(2, "0");
+  const mes = (dataObj.getMonth() + 1).toString().padStart(2, "0");
+  const ano = dataObj.getFullYear().toString();
+
+  return `${dia}/${mes}/${ano}`;
 }
-
-*/

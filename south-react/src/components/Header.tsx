@@ -8,23 +8,20 @@ const Header = (props: Props) => {
     <header className="flex w-full items-center justify-between bg-white">
       <Link to={"/"} className="w-60 max-w-full px-4">
         <img
-          src="https://cdn.tailgrids.com/2.0/image/assets/images/logo/logo.svg"
+          src="https://southsystem.com.br/wp-content/themes/southsystem/assets/img/logo-southsystem.svg"
           alt="logo"
-          className="w-full block w-full py-5"
+          className="w-full block w-full py-8"
         />
       </Link>
-      <div className="flex items-center px-4">
-        <Link
-          to={"/"}
-          className="text-dark hover:text-primary py-3 px-7 text-base font-medium"
-        >
+      <div className="flex items-center px-4 text-base font-medium">
+        <Link to={"/"} className="text-dark hover:text-primary py-3 px-7">
           Login
         </Link>
         <Link
-          to={"/"}
-          className="bg-blue-500 rounded-lg py-3 px-7 text-base font-medium text-white hover:bg-opacity-90"
+          to={"/saved"}
+          className="bg-blue-500 rounded-lg py-3 px-7 text-white hover:bg-opacity-90"
         >
-          Sign Up
+          Salvos
         </Link>
       </div>
     </header>

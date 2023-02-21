@@ -1,5 +1,6 @@
 import placeholder from "../assets/150.png";
 import { IUnique } from "../interfaces/ISearchId";
+import { formatData } from "../utils/description";
 
 type Props = {
   dados: IUnique;
@@ -21,19 +22,18 @@ const About = ({ dados }: Props) => {
         <h1 className="text-dark mb-8 text-3xl font-bold sm:text-4xl">
           {dados.volumeInfo.title}
         </h1>
-        <p className="text-body-color mb-8 text-base">
-          <div
-            dangerouslySetInnerHTML={{ __html: dados.volumeInfo.description }}
-          />
-        </p>
+        <div
+          className="text-body-color mb-8 text-base"
+          dangerouslySetInnerHTML={{ __html: dados.volumeInfo.description }}
+        ></div>
         <h2 className="mb-8 text-md font-bold">
           {dados.volumeInfo.pageCount} páginas, Editora:{" "}
-          {dados.volumeInfo.publisher}
+          {dados.volumeInfo.publisher},{" "}
+          {formatData(dados.volumeInfo.publishedDate)}
         </h2>
-        <h2 className="mb-8 text-md font-bold">
-          Data publicação: {dados.volumeInfo.publishedDate}
-        </h2>
-        <span>{dados.volumeInfo.averageRating}</span>
+        <span className="bg-blue-500 rounded-lg py-3 px-7 text-base font-medium text-white hover:bg-opacity-90">
+          Salvar
+        </span>
       </div>
     </section>
   );

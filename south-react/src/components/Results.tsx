@@ -36,7 +36,7 @@ const Results = ({ searchQuery }: Props) => {
       <div className="container mx-auto px-5 py-10">
         <div className="-m-4 flex flex-wrap">
           {items.map((item) => (
-            <Card data={item}></Card>
+            <Card key={item.id} data={item}></Card>
           ))}
         </div>
       </div>
