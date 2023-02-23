@@ -1,5 +1,7 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import Header from "./components/Header.vue";
+import Card from "./components/Card.vue";
+import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
@@ -10,8 +12,12 @@ import HelloWorld from './components/HelloWorld.vue'
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
+    <Card></Card>
+    <Header></Header>
+    <HelloWorld msg="fff"></HelloWorld>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+
+  <!--<HelloWorld msg="Vite + Vue" />-->
 </template>
 
 <style scoped>
