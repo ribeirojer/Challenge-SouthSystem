@@ -2,10 +2,14 @@
   <div>
     <div class="container mx-auto px-5 py-10">
       <div class="-m-4 flex flex-wrap">
-        <Card v-for="item in searchResult.items" :key="item.id" :data="item"></Card>
+        <Card
+          v-for="item in searchResult.items"
+          :key="item.id"
+          :data="item"
+        ></Card>
       </div>
     </div>
-    <Pagination :pages="pages" :setCurrentPage="setCurrentPage"></Pagination>
+    <Pagination :totalItems="searchResult.totalItems"></Pagination>
   </div>
 </template>
 
@@ -38,7 +42,7 @@ export default {
       this.searchResult = res.data;
     });
   },
-  setup(props) {
+  setup(props: { searchQuery: any }) {
     const state = reactive({
       currentPage: 0,
       itemsPerPage: 10,
