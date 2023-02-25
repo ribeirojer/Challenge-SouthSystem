@@ -1,15 +1,14 @@
 <template>
-  <header className="flex px-4 w-full items-center justify-between bg-white">
-    <a href="/" className="w-60">
+  <header class="flex px-4 w-full items-center justify-between bg-white">
+    <router-link to="/" class="w-60">
       <img
         src="https://southsystem.com.br/wp-content/themes/southsystem/assets/img/logo-southsystem.svg"
         alt="logo"
-        className="w-full py-6"
-      />
-    </a>
-    <a href="/">
+        class="w-full py-6"
+    /></router-link>
+    <router-link to="/saved">
       <Button :text="'Salvos'"></Button>
-    </a>
+    </router-link>
   </header>
 </template>
 
