@@ -21,7 +21,7 @@
             </p>
           </div>
           <div>
-            <Button :text="'LER AGORA'"></Button>
+            <Button :text="'Salvar'" @click="addBookToLocalStorage"></Button>
           </div>
         </div>
       </div>
@@ -57,6 +57,20 @@ export default {
       console.log(res);
       this.searchResult = res.data;
     });
+  },
+  methods: {
+    addBookToLocalStorage() {
+      const bookId = this.searchResult.id;
+      const savedBooks = localStorage.getItem("savedBooks");
+      let parsedSavedBooks = [];
+      if (savedBooks) {
+        parsedSavedBooks = JSON.parse(savedBooks);
+      }
+      if (parsedSavedBooks.indexOf(bookId) === -1) {
+        parsedSavedBooks.push(bookId);
+        localStorage.setItem("savedBooks", JSON.stringify(parsedSavedBooks));
+      }
+    },
   },
 };
 </script>
